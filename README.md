@@ -157,5 +157,3 @@ LINCORD is built with a modular architecture:
 - **py-cord 2.4+** - Discord bot framework
 - **aiomysql** - Async MySQL connector
 - **Python 3.8+** - Core runtime
-
-## [Back to the top](#lincord)
