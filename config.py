@@ -23,4 +23,5 @@ LOCKED_SERVERS = set()
 
 DATA_DIR = 'data'
 COGS_DIR = 'cogs'
-APT_PACKAGES_DIR = 'apt-packages'
+APT_PACKAGES_DIR = 'apt_packages'
+
