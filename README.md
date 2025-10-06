@@ -158,6 +158,4 @@ LINCORD is built with a modular architecture:
 - **aiomysql** - Async MySQL connector
 - **Python 3.8+** - Core runtime
 
-## Back to the top
-
-[Back to the top](#lincord)
+## [Back to the top](#lincord)
