@@ -19,7 +19,7 @@ Wir nehmen Sicherheit ernst. Wenn Sie eine Sicherheitslücke in LINCORD entdecke
 
 Stattdessen:
 
-1. **E-Mail**: Senden Sie Details an `security@lincord.dev` (falls verfügbar)
+1. **E-Mail**: Senden Sie Details an `lincord@ixnix.dev`
 2. **Private Nachricht**: Kontaktieren Sie den Maintainer direkt auf Discord
 3. **GitHub Security Advisories**: Nutzen Sie GitHubs private Schwachstellen-Berichtsfunktion
 
@@ -81,3 +81,4 @@ Wir erkennen Sicherheitsforscher an, die helfen, LINCORD zu verbessern:
 
 
 **Hinweis**: Diese Sicherheitsrichtlinie gilt für das LINCORD Discord Bot Projekt. Für Discord-Plattform-Sicherheitsprobleme wenden Sie sich direkt an Discord.
+
