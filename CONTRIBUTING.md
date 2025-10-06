@@ -93,238 +93,237 @@ Wir begrüßen verschiedene Arten von Beiträgen:
    python main.py
    ```
 
-### Project Structure
+### Projektstruktur
 
 ```
 lincord/
-├── main.py              # Bot initialization
-├── config.py            # Configuration management
-├── database.py          # Database operations
+├── main.py              # Bot-Initialisierung
+├── config.py            # Konfigurationsverwaltung
+├── database.py          # Datenbankoperationen
 ├── cogs/
-│   ├── terminal.py      # Core terminal interface
-│   └── modtools.py      # Moderation tools (copied from apt-packages)
-├── apt-packages/        # Installable packages
-│   ├── modtools.py      # Real Discord moderation
-│   └── ...              # Other packages
-└── requirements.txt     # Python dependencies
+│   ├── terminal.py      # Kern-Terminal-Interface
+│   └── modtools.py      # Moderationstools (kopiert von apt-packages)
+├── apt-packages/        # Installierbare Pakete
+│   ├── modtools.py      # Echte Discord-Moderation
+│   └── ...              # Andere Pakete
+└── requirements.txt     # Python-Abhängigkeiten
 ```
 
-## Coding Standards
+## Codierungsstandards
 
-### Python Style
+### Python-Stil
 
-- Follow **PEP 8** style guidelines
-- Use **4 spaces** for indentation
-- Maximum line length: **100 characters**
-- Use **meaningful variable names**
-- Add **docstrings** to functions and classes
+- Befolgen Sie **PEP 8** Stilrichtlinien
+- Verwenden Sie **4 Leerzeichen** für Einrückungen
+- Maximale Zeilenlänge: **100 Zeichen**
+- Verwenden Sie **aussagekräftige Variablennamen**
+- Fügen Sie **Docstrings** zu Funktionen und Klassen hinzu
 
-### Example Code Style
+### Beispiel Code-Stil
 
 ```python
 async def execute_command(self, channel, user, args):
-    """Execute a terminal command with proper error handling.
+    """Führt einen Terminal-Befehl mit ordnungsgemäßer Fehlerbehandlung aus.
     
     Args:
-        channel: Discord channel object
-        user: Discord user object
-        args: List of command arguments
+        channel: Discord-Kanal-Objekt
+        user: Discord-Benutzer-Objekt
+        args: Liste der Befehlsargumente
         
     Returns:
-        bool: True if command executed successfully
+        bool: True wenn Befehl erfolgreich ausgeführt wurde
     """
     if not args:
-        await self.send_error_response(channel, "No command provided", user)
+        await self.send_error_response(channel, "Kein Befehl angegeben", user)
         return False
         
     command = args[0].lower()
-    # Process command logic here
+    # Befehlslogik hier verarbeiten
     return True
 ```
 
-### Commit Messages
+### Commit-Nachrichten
 
-Use clear, descriptive commit messages:
+Verwenden Sie klare, beschreibende Commit-Nachrichten:
 
 ```
-Add new 'find' command to terminal interface
+Neuen 'find' Befehl zum Terminal-Interface hinzufügen
 
-- Implement file search functionality
-- Add support for wildcards and regex
-- Include proper error handling for permissions
-- Update help documentation
+- Dateisuch-Funktionalität implementieren
+- Unterstützung für Wildcards und Regex hinzufügen
+- Ordnungsgemäße Fehlerbehandlung für Berechtigungen einschließen
+- Hilfe-Dokumentation aktualisieren
 
 Fixes #123
 ```
 
-## Submitting Changes
+## Änderungen einreichen
 
-### Pull Request Process
+### Pull Request Prozess
 
-1. **Ensure your code follows** the coding standards
-2. **Test your changes** thoroughly
-3. **Update documentation** if needed
-4. **Create a pull request** with:
-   - Clear title and description
-   - Reference to related issues
-   - Screenshots if UI changes
-   - Test results
+1. **Stellen Sie sicher, dass Ihr Code** den Codierungsstandards folgt
+2. **Testen Sie Ihre Änderungen** gründlich
+3. **Aktualisieren Sie die Dokumentation** falls nötig
+4. **Erstellen Sie einen Pull Request** mit:
+   - Klarem Titel und Beschreibung
+   - Verweis auf verwandte Issues
+   - Screenshots bei UI-Änderungen
+   - Testergebnissen
 
-### Pull Request Template
+### Pull Request Vorlage
 
 ```markdown
-## Description
-Brief description of changes
+## Beschreibung
+Kurze Beschreibung der Änderungen
 
-## Type of Change
-- [ ] Bug fix
-- [ ] New feature
-- [ ] Documentation update
-- [ ] Performance improvement
+## Art der Änderung
+- [ ] Fehlerbehebung
+- [ ] Neues Feature
+- [ ] Dokumentations-Update
+- [ ] Performance-Verbesserung
 
 ## Testing
-- [ ] Tested locally
-- [ ] Added/updated tests
-- [ ] All tests pass
+- [ ] Lokal getestet
+- [ ] Tests hinzugefügt/aktualisiert
+- [ ] Alle Tests bestehen
 
-## Related Issues
-Fixes #(issue number)
+## Verwandte Issues
+Fixes #(Issue-Nummer)
 ```
 
-## Reporting Bugs
+## Fehler melden
 
-### Before Reporting
+### Vor der Meldung
 
-1. **Check existing issues** to avoid duplicates
-2. **Test with latest version** of LINCORD
-3. **Gather relevant information**:
-   - Python version
-   - Discord.py version
-   - Error messages/logs
-   - Steps to reproduce
+1. **Prüfen Sie bestehende Issues** um Duplikate zu vermeiden
+2. **Testen Sie mit der neuesten Version** von LINCORD
+3. **Sammeln Sie relevante Informationen**:
+   - Python-Version
+   - Discord.py-Version
+   - Fehlermeldungen/Logs
+   - Schritte zur Reproduktion
 
-### Bug Report Template
+### Fehlerbericht-Vorlage
 
 ```markdown
-**Bug Description**
-Clear description of the bug
+**Fehlerbeschreibung**
+Klare Beschreibung des Fehlers
 
-**Steps to Reproduce**
-1. Step one
-2. Step two
-3. Step three
+**Schritte zur Reproduktion**
+1. Schritt eins
+2. Schritt zwei
+3. Schritt drei
 
-**Expected Behavior**
-What should happen
+**Erwartetes Verhalten**
+Was sollte passieren
 
-**Actual Behavior**
-What actually happens
+**Tatsächliches Verhalten**
+Was passiert tatsächlich
 
-**Environment**
-- OS: [e.g., Windows 10]
-- Python: [e.g., 3.8.5]
-- LINCORD Version: [e.g., 2.0.1]
+**Umgebung**
+- OS: [z.B., Windows 10]
+- Python: [z.B., 3.8.5]
+- LINCORD Version: [z.B., 0.0.1]
 
-**Additional Context**
-Any other relevant information
+**Zusätzlicher Kontext**
+Alle anderen relevanten Informationen
 ```
 
-## Requesting Features
+## Features anfragen
 
-### Feature Request Guidelines
+### Feature-Anfrage-Richtlinien
 
-1. **Search existing requests** first
-2. **Explain the use case** clearly
-3. **Provide examples** of how it would work
-4. **Consider implementation** complexity
+1. **Durchsuchen Sie bestehende Anfragen** zuerst
+2. **Erklären Sie den Anwendungsfall** klar
+3. **Geben Sie Beispiele** wie es funktionieren würde
+4. **Berücksichtigen Sie die Implementierungs**-Komplexität
 
-### Feature Request Template
+### Feature-Anfrage-Vorlage
 
 ```markdown
-**Feature Description**
-Clear description of the proposed feature
+**Feature-Beschreibung**
+Klare Beschreibung des vorgeschlagenen Features
 
-**Use Case**
-Why is this feature needed?
+**Anwendungsfall**
+Warum wird dieses Feature benötigt?
 
-**Proposed Implementation**
-How should this feature work?
+**Vorgeschlagene Implementierung**
+Wie sollte dieses Feature funktionieren?
 
-**Alternatives Considered**
-Other solutions you've considered
+**Betrachtete Alternativen**
+Andere Lösungen, die Sie in Betracht gezogen haben
 
-**Additional Context**
-Any other relevant information
+**Zusätzlicher Kontext**
+Alle anderen relevanten Informationen
 ```
 
-## Package Development
+## Paket-Entwicklung
 
-### Creating New Packages
+### Neue Pakete erstellen
 
-LINCORD supports installable packages in the `apt-packages/` directory:
+LINCORD unterstützt installierbare Pakete im `apt-packages/` Verzeichnis:
 
-1. **Create package file**: `apt-packages/your_package.py`
-2. **Implement Cog class**:
+1. **Paket-Datei erstellen**: `apt-packages/ihr_paket.py`
+2. **Cog-Klasse implementieren**:
    ```python
    from discord.ext import commands
    
-   class YourPackage(commands.Cog):
+   class IhrPaket(commands.Cog):
        def __init__(self, bot):
            self.bot = bot
        
-       async def execute_your_command(self, message, args):
-           # Command implementation
+       async def execute_ihr_befehl(self, message, args):
+           # Befehlsimplementierung
            pass
    
    def setup(bot):
-       bot.add_cog(YourPackage(bot))
+       bot.add_cog(IhrPaket(bot))
    ```
 
-3. **Add to terminal interface** in `cogs/terminal.py`
-4. **Test installation** with `apt install your_package`
+3. **Zum Terminal-Interface hinzufügen** in `cogs/terminal.py`
+4. **Installation testen** mit `apt install ihr_paket`
 
-### Package Guidelines
+### Paket-Richtlinien
 
-- **Follow naming conventions**: lowercase with underscores
-- **Include proper error handling**
-- **Add help documentation**
-- **Test thoroughly** before submitting
+- **Befolgen Sie Namenskonventionen**: Kleinbuchstaben mit Unterstrichen
+- **Schließen Sie ordnungsgemäße Fehlerbehandlung ein**
+- **Fügen Sie Hilfe-Dokumentation hinzu**
+- **Testen Sie gründlich** vor der Einreichung
 
-## Review Process
+## Review-Prozess
 
-### What We Look For
+### Wonach wir suchen
 
-- **Code quality** and adherence to standards
-- **Proper testing** and error handling
-- **Clear documentation** and comments
-- **Backward compatibility** when possible
-- **Security considerations** for Discord bots
+- **Code-Qualität** und Einhaltung von Standards
+- **Ordnungsgemäße Tests** und Fehlerbehandlung
+- **Klare Dokumentation** und Kommentare
+- **Rückwärtskompatibilität** wenn möglich
+- **Sicherheitsüberlegungen** für Discord-Bots
 
-### Timeline
+### Zeitplan
 
-- **Initial review**: Within 1 week
-- **Follow-up reviews**: Within 3 days
-- **Final approval**: When all requirements are met
+- **Erste Überprüfung**: Innerhalb von 1 Woche
+- **Folge-Überprüfungen**: Innerhalb von 3 Tagen
+- **Endgültige Genehmigung**: Wenn alle Anforderungen erfüllt sind
 
-## Getting Help
+## Hilfe erhalten
 
-### Community Support
+### Community-Support
 
-- **GitHub Issues**: For bugs and feature requests
-- **GitHub Discussions**: For questions and general discussion
-- **Discord Server**: [Join our community](https://discord.gg/lincord) (if available)
+- **GitHub Issues**: Für Fehler und Feature-Anfragen
+- **GitHub Discussions**: Für Fragen und allgemeine Diskussionen
 
-### Maintainer Contact
+### Maintainer-Kontakt
 
-For sensitive issues or direct questions:
-- **Email**: maintainer@lincord.dev (if available)
+Für sensible Angelegenheiten oder direkte Fragen:
+- **E-Mail**: lincord@ixnix.dev
 - **GitHub**: @realwatafakovisk
 
-## Recognition
+## Anerkennung
 
-Contributors will be recognized in:
-- **README.md** contributors section
-- **Release notes** for significant contributions
-- **Hall of Fame** for security researchers
+Contributors werden anerkannt in:
+- **README.md** Contributors-Sektion
+- **Release Notes** für bedeutende Beiträge
+- **Hall of Fame** für Sicherheitsforscher
 
-Thank you for contributing to LINCORD! Your efforts help make this project better for everyone.
+Vielen Dank für Ihren Beitrag zu LINCORD! Ihre Bemühungen helfen dabei, dieses Projekt für alle besser zu machen.
