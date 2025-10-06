@@ -6,8 +6,8 @@ Die folgenden Versionen von LINCORD werden derzeit mit Sicherheitsupdates unters
 
 | Version | Unterstützt        |
 | ------- | ------------------ |
-| 2.0.x   | :white_check_mark: |
-| 1.x.x   | :x:                |
+| 0.0.1   | :white_check_mark: |
+
 
 ## Sicherheitslücke melden
 
@@ -78,5 +78,6 @@ Wir erkennen Sicherheitsforscher an, die helfen, LINCORD zu verbessern:
 *Noch keine Sicherheitsberichte erhalten.*
 
 ---
+
 
 **Hinweis**: Diese Sicherheitsrichtlinie gilt für das LINCORD Discord Bot Projekt. Für Discord-Plattform-Sicherheitsprobleme wenden Sie sich direkt an Discord.
