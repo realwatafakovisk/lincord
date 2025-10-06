@@ -6,154 +6,160 @@
 ![Github repo size](https://img.shields.io/github/repo-size/realwatafakovisk/lincord)
 ![Github stars](https://img.shields.io/github/stars/realwatafakovisk/lincord?style=social)
 
-> Discord Bot that provides a Linux-like terminal experience directly in Discord
+> Discord Bot, der eine Linux-ähnliche Terminal-Erfahrung direkt in Discord bietet
 
 ## Features
 
-LINCORD brings the power of Linux terminal commands to Discord:
+LINCORD bringt die Macht von Linux-Terminal-Befehlen nach Discord:
 
-- **Terminal Interface**: Execute Linux-like commands directly in Discord
-- **Package Management**: Install and manage packages with apt-like commands
-- **Real Moderation**: Kick, ban, timeout users through terminal commands
-- **File System Simulation**: Navigate directories with ls, cd, pwd commands
-- **System Monitoring**: Check processes, memory, and system information
-- **MySQL Integration**: Persistent data storage and user management
+- **Terminal-Interface**: Führen Sie Linux-ähnliche Befehle direkt in Discord aus
+- **Paketverwaltung**: Installieren und verwalten Sie Pakete mit apt-ähnlichen Befehlen
+- **Echte Moderation**: Kicken, bannen und timeout-en Sie Benutzer über Terminal-Befehle
+- **Dateisystem-Simulation**: Navigieren Sie durch Verzeichnisse mit ls, cd, pwd-Befehlen
+- **System-Überwachung**: Überprüfen Sie Prozesse, Speicher und Systeminformationen
+- **MySQL-Integration**: Persistente Datenspeicherung und Benutzerverwaltung
 
-## Prerequisites
+## Voraussetzungen
 
-Before you begin, make sure you have the following dependencies installed:
+Stellen Sie vor Beginn sicher, dass Sie die folgenden Abhängigkeiten installiert haben:
 
-- **Python 3.8+**: Download from [python.org](https://www.python.org/downloads/)
-- **Discord Bot Token**: Create a bot at [Discord Developer Portal](https://discord.com/developers/applications)
-- **MySQL Server**: For persistent data storage (optional, fallback mode available)
+- **Python 3.8+**: Download von [python.org](https://www.python.org/downloads/)
+- **Discord Bot Token**: Erstellen Sie einen Bot im [Discord Developer Portal](https://discord.com/developers/applications)
+- **MySQL Server**: Für persistente Datenspeicherung (optional, Fallback-Modus verfügbar)
 
-## How to run the project
+## Wie Sie das Projekt ausführen
 
-Follow the steps below to run LINCORD on your local machine:
+Befolgen Sie die folgenden Schritte, um LINCORD auf Ihrem lokalen Computer auszuführen:
 
-Execute the following commands from the project root folder:
+Führen Sie die folgenden Befehle im Projekthauptverzeichnis aus:
 
-### Clone this repository
+### Repository klonen
 
 ```bash
 git clone https://github.com/realwatafakovisk/lincord
 cd lincord
 ```
 
-This link can be found in the green button above `Code`.
+Dieser Link ist im grünen Button `Code` zu finden.
 
-### Create a Virtual Environment
+### Virtuelle Umgebung erstellen
 
 ```bash
 python3 -m venv venv
 ```
 
-**Activate the virtual environment**
+**Virtuelle Umgebung aktivieren**
 
-**On Windows**
+**Unter Windows**
 
 ```bash
 venv\Scripts\activate
 ```
 
-**On Unix or MacOS**
+**Unter Unix oder MacOS**
 
 ```bash
 source venv/bin/activate
 ```
 
-### Install the dependencies
+### Abhängigkeiten installieren
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Configure the bot
+### Bot konfigurieren
 
-1. Create a `.env` file in the project root:
+1. Erstellen Sie eine `.env` Datei im Projekthauptverzeichnis:
 
 ```env
-BOT_TOKEN=your_discord_bot_token_here
-DB_HOST=your_mysql_host
-DB_USER=your_mysql_user
-DB_PASSWORD=your_mysql_password
-DB_NAME=your_database_name
+BOT_TOKEN=ihr_discord_bot_token_hier
+DB_HOST=ihr_mysql_host
+DB_USER=ihr_mysql_benutzer
+DB_PASSWORD=ihr_mysql_passwort
+DB_NAME=ihr_datenbankname
 ```
 
-2. Invite the bot to your Discord server with the following permissions:
-   - Send Messages
-   - Manage Messages
-   - Kick Members
-   - Ban Members
-   - Moderate Members
-   - Manage Channels
+2. Laden Sie den Bot zu Ihrem Discord-Server mit den folgenden Berechtigungen ein:
+   - Nachrichten senden
+   - Nachrichten verwalten
+   - Mitglieder kicken
+   - Mitglieder bannen
+   - Mitglieder moderieren
+   - Kanäle verwalten
 
-### Run the project
+### Projekt ausführen
 
 ```bash
 python main.py
 ```
 
-The bot will automatically create a terminal channel when first added to a server.
+Der Bot erstellt automatisch einen Terminal-Kanal, wenn er zum ersten Mal zu einem Server hinzugefügt wird.
 
-## Available Commands
+## Verfügbare Befehle
 
-Once LINCORD is running in your Discord server, you can use these terminal commands:
+Sobald LINCORD auf Ihrem Discord Server läuft, können Sie diese Terminal-Befehle verwenden:
 
-### Basic Commands
-- `ls` - List directory contents
-- `pwd` - Show current directory
-- `cd <directory>` - Change directory
-- `cat <file>` - Display file contents
-- `tree` - Show directory structure
+### Grundlegende Befehle
+- `ls` - Verzeichnisinhalt auflisten
+- `pwd` - Aktuelles Verzeichnis anzeigen
+- `cd <verzeichnis>` - Verzeichnis wechseln
+- `cat <datei>` - Dateiinhalt anzeigen
+- `tree` - Verzeichnisstruktur anzeigen
 
-### System Commands
-- `ps` - Show running processes
-- `top` - Display system resources
-- `free` - Show memory usage
-- `uptime` - System uptime information
-- `whoami` - Current user information
+### System-Befehle
+- `ps` - Laufende Prozesse anzeigen
+- `top` - Systemressourcen anzeigen
+- `free` - Speicherverbrauch anzeigen
+- `uptime` - System-Laufzeit-Informationen
+- `whoami` - Aktuelle Benutzerinformationen
 
-### Package Management
-- `apt list` - Show available packages
-- `apt install <package>` - Install a package
-- `apt remove <package>` - Remove a package
-- `apt upgrade` - Upgrade all packages
+### Paketverwaltung
+- `apt list` - Verfügbare Pakete anzeigen
+- `apt install <paket>` - Paket installieren
+- `apt remove <paket>` - Paket entfernen
+- `apt upgrade` - Alle Pakete aktualisieren
 
-### Moderation (requires modtools package)
-- `modtools kick <@user> [reason]` - Kick a user
-- `modtools ban <@user> [reason]` - Ban a user
-- `modtools timeout <@user> <duration> [reason]` - Timeout a user
-- `modtools clear <amount>` - Delete messages
+### Moderation (erfordert modtools-Paket)
+- `modtools kick <@benutzer> [grund]` - Benutzer kicken
+- `modtools ban <@benutzer> [grund]` - Benutzer bannen
+- `modtools timeout <@benutzer> <dauer> [grund]` - Benutzer timeout-en
+- `modtools clear <anzahl>` - Nachrichten löschen
 
-## How to Contribute
+## Wie Sie beitragen können
 
-If you want to contribute to this project, follow the steps below:
+Wenn Sie zu diesem Projekt beitragen möchten, befolgen Sie die folgenden Schritte:
 
-1. Fork this repository.
-2. Create a branch: `git checkout -b <branch_name>`.
-3. Make your changes and confirm them: `git commit -m '<commit_message>'`
-4. Send to the original branch: `git push origin <project_name> / <location>`
-5. Create the pull request.
+1. Forken Sie dieses Repository.
+2. Erstellen Sie einen Branch: `git checkout -b <branch_name>`.
+3. Nehmen Sie Ihre Änderungen vor und bestätigen Sie sie: `git commit -m '<commit_message>'`
+4. Senden Sie an den ursprünglichen Branch: `git push origin <project_name> / <location>`
+5. Erstellen Sie den Pull Request.
 
-Alternatively, consult the GitHub documentation on [how to create a pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
+Alternativ konsultieren Sie die GitHub-Dokumentation zu [wie man einen Pull Request erstellt](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
-## License
+Weitere Details finden Sie in [CONTRIBUTING.md](CONTRIBUTING.md).
 
-This project is under license. See [LICENSE](LICENSE) for more information.
+## Lizenz
 
-## Architecture
+Dieses Projekt steht unter Lizenz. Siehe [LICENSE](LICENSE) für weitere Informationen.
 
-LINCORD is built with a modular architecture:
+## Architektur
 
-- **main.py** - Bot initialization and server setup
-- **cogs/terminal.py** - Core terminal interface and command processing
-- **apt-packages/** - Installable packages (modtools, etc.)
-- **database.py** - MySQL integration and data persistence
-- **config.py** - Configuration management
+LINCORD ist mit einer modularen Architektur aufgebaut:
 
-## Technical Stack
+- **main.py** - Bot-Initialisierung und Server-Setup
+- **cogs/terminal.py** - Kern-Terminal-Interface und Befehlsverarbeitung
+- **apt-packages/** - Installierbare Pakete (modtools, etc.)
+- **database.py** - MySQL-Integration und Datenpersistierung
+- **config.py** - Konfigurationsverwaltung
 
-- **py-cord 2.4+** - Discord bot framework
-- **aiomysql** - Async MySQL connector
-- **Python 3.8+** - Core runtime
+## Technischer Stack
+
+- **py-cord 2.4+** - Discord Bot Framework
+- **aiomysql** - Async MySQL Connector
+- **Python 3.8+** - Kern-Laufzeitumgebung
+
+## Zurück nach oben
+
+[⬆ Zurück nach oben](#lincord)

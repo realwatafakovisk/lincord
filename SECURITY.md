@@ -2,79 +2,81 @@
 
 ## Unterstützte Versionen
 
-Die folgenden LINCORD-Versionen werden derzeit mit Sicherheitsupdates unterstützt:
+Die folgenden Versionen von LINCORD werden derzeit mit Sicherheitsupdates unterstützt:
 
-| Version | Unterstützt |
+| Version | Unterstützt        |
 | ------- | ------------------ |
-| 0.0.x | :white_check_mark: |
+| 2.0.x   | :white_check_mark: |
+| 1.x.x   | :x:                |
 
 ## Sicherheitslücke melden
 
-Wir nehmen Sicherheit ernst. Wenn Sie eine Sicherheitslücke in LINCORD entdecken, melden Sie diese bitte verantwortungsbewusst.
+Wir nehmen Sicherheit ernst. Wenn Sie eine Sicherheitslücke in LINCORD entdecken, melden Sie diese bitte verantwortungsvoll.
 
-### So melden Sie Sicherheitslücken
+### Wie melden
 
-**Erstellen Sie KEIN öffentliches GitHub-Problem für Sicherheitslücken.**
+**Erstellen Sie KEINE öffentliche GitHub-Issue für Sicherheitslücken.**
 
-Bitte gehen Sie stattdessen wie folgt vor:
+Stattdessen:
 
-1. **E-Mail**: Senden Sie die Details an „lincord@ixnix.dev“.
-2. **Private Nachricht**: Kontaktieren Sie den Betreuer direkt über Discord.
-3. **GitHub-Sicherheitshinweise**: Nutzen Sie die private Meldefunktion für Sicherheitslücken von GitHub.
+1. **E-Mail**: Senden Sie Details an `security@lincord.dev` (falls verfügbar)
+2. **Private Nachricht**: Kontaktieren Sie den Maintainer direkt auf Discord
+3. **GitHub Security Advisories**: Nutzen Sie GitHubs private Schwachstellen-Berichtsfunktion
 
-### Was Sie angeben sollten
+### Was einzuschließen ist
 
-Bitte geben Sie bei der Meldung einer Sicherheitslücke Folgendes an:
+Bei der Meldung einer Sicherheitslücke bitte folgendes angeben:
 
 - **Beschreibung** der Sicherheitslücke
 - **Schritte zur Reproduktion** des Problems
-- **Bewertung der potenziellen Auswirkungen**
-- **Ihre Kontaktdaten** für die Nachverfolgung
+- **Potentielle Auswirkungen** bewerten
+- **Lösungsvorschlag** (falls vorhanden)
+- **Ihre Kontaktdaten** für Rückfragen
 
-### Antwortprozess
+### Bearbeitungsprozess
 
-- **Bestätigung**: Wir bestätigen den Eingang innerhalb von 48 Stunden.
-- **Untersuchung**: Wir untersuchen und bewerten die Sicherheitslücke.
-- **Zeitplan**: Sie erhalten während des Prozesses alle 5–7 Tage Updates.
-- **Lösung**: Wir bemühen uns, kritische Probleme zu beheben. Probleme innerhalb von 30 Tagen
-- **Offenlegung**: Wir koordinieren die öffentliche Bekanntgabe nach Veröffentlichung des Fixes.
+- **Bestätigung**: Wir bestätigen den Erhalt innerhalb von 48 Stunden
+- **Untersuchung**: Wir untersuchen und bewerten die Sicherheitslücke
+- **Zeitplan**: Updates alle 5-7 Tage während des Prozesses
+- **Lösung**: Kritische Probleme werden innerhalb von 30 Tagen behoben
+- **Veröffentlichung**: Koordinierte öffentliche Bekanntgabe nach dem Fix
 
 ### Geltungsbereich
 
 Diese Sicherheitsrichtlinie umfasst:
 
-- **Kernfunktionen des Bots** (main.py, terminal.py)
+- **Kern-Bot-Funktionalität** (main.py, terminal.py)
 - **Datenbankoperationen** (database.py)
-- **Moderationstools** (modtools-Paket)
+- **Moderationstools** (modtools package)
 - **Authentifizierung und Berechtigungen**
 
-### Nicht im Geltungsbereich
+### Außerhalb des Geltungsbereichs
 
-Folgende Punkte fallen grundsätzlich nicht in den Geltungsbereich:
+Folgende Punkte sind generell ausgeschlossen:
 
-- **Abhängigkeiten von Drittanbietern** (an Upstream melden)
-- **Probleme mit der Discord-Plattform**
-- **Serverspezifische Fehlkonfigurationen**
-- **Social-Engineering-Angriffe**
+- **Drittanbieter-Abhängigkeiten** (an Upstream melden)
+- **Discord-Plattform-Probleme**
+- **Server-spezifische Fehlkonfigurationen**
+- **Social Engineering Angriffe**
 
-## Best Practices für die Sicherheit
+## Sicherheits-Best-Practices
 
 Bei der Verwendung von LINCORD:
 
-1. **Schützen Sie Ihren Bot-Token** – Geben Sie ihn niemals weiter und übertragen Sie ihn nicht.
-2. **Verwenden Sie die richtigen Discord-Berechtigungen** – Erteilen Sie nur die erforderlichen Berechtigungen.
-3. **Regelmäßige Updates** – Halten Sie LINCORD auf dem neuesten Stand.
-4. **Überwachen Sie Protokolle** – Achten Sie auf ungewöhnliche Aktivitäten.
-5. **Datensicherung** – Regelmäßige Datenbanksicherungen empfohlen
+1. **Bot-Token sicher aufbewahren** - Niemals teilen oder committen
+2. **Richtige Discord-Berechtigungen** - Nur nötige Berechtigungen gewähren
+3. **Regelmäßige Updates** - LINCORD auf dem neuesten Stand halten
+4. **Logs überwachen** - Auf ungewöhnliche Aktivitäten achten
+5. **Daten sichern** - Regelmäßige Datenbank-Backups empfohlen
 
 ## Hall of Fame
 
-Wir würdigen Sicherheitsforscher, die zur Verbesserung von LINCORD beitragen:
+Wir erkennen Sicherheitsforscher an, die helfen, LINCORD zu verbessern:
 
-<!-- Zukünftige Mitwirkende werden hier aufgeführt -->
+<!-- Zukünftige Mitwirkende werden hier aufgelistet -->
 
-*Bisher keine Sicherheitsberichte eingegangen.*
+*Noch keine Sicherheitsberichte erhalten.*
 
 ---
 
-**Hinweis**: Diese Sicherheitsrichtlinie gilt für das LINCORD-Discord-Bot-Projekt. Bei Sicherheitsproblemen auf der Discord-Plattform wenden Sie sich bitte direkt an Discord.
+**Hinweis**: Diese Sicherheitsrichtlinie gilt für das LINCORD Discord Bot Projekt. Für Discord-Plattform-Sicherheitsprobleme wenden Sie sich direkt an Discord.
