@@ -160,4 +160,4 @@ LINCORD is built with a modular architecture:
 
 ## Back to the top
 
-[⬆ Back to the top](#lincord)
+[Back to the top](#lincord)
