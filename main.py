@@ -109,6 +109,19 @@ async def on_ready():
     except Exception as e:
         print(f'Fehler beim Laden des Terminal Cogs: {e}')
     
+    # Load permission system cogs
+    try:
+        bot.load_extension('cogs.servergroups')
+        print('Server Groups Cog geladen')
+    except Exception as e:
+        print(f'Fehler beim Laden des Server Groups Cogs: {e}')
+    
+    try:
+        bot.load_extension('cogs.user')
+        print('User Management Cog geladen')
+    except Exception as e:
+        print(f'Fehler beim Laden des User Management Cogs: {e}')
+    
     await load_all_available_packages()
     
     bot.add_view(SetupView())

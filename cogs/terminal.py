@@ -104,6 +104,48 @@ class TerminalInterface(commands.Cog):
         elif cmd == "funcommands":
             await self.cmd_funcommands(channel, user, args)
         
+        # Permission system commands
+        elif cmd == "groups":
+            server_groups_cog = self.bot.get_cog("ServerGroups")
+            if server_groups_cog:
+                await server_groups_cog.execute_groups(message, parts)
+            else:
+                await self.send_terminal_response(
+                    channel, command, 
+                    "groups: module not loaded\nTry restarting the bot", 
+                    user, success=False
+                )
+        elif cmd == "user":
+            user_management_cog = self.bot.get_cog("UserManagement")
+            if user_management_cog:
+                await user_management_cog.execute_user(message, parts)
+            else:
+                await self.send_terminal_response(
+                    channel, command, 
+                    "user: module not loaded\nTry restarting the bot", 
+                    user, success=False
+                )
+        elif cmd == "login":
+            user_management_cog = self.bot.get_cog("UserManagement")
+            if user_management_cog:
+                await user_management_cog.execute_login(message, parts)
+            else:
+                await self.send_terminal_response(
+                    channel, command, 
+                    "login: module not loaded\nTry restarting the bot", 
+                    user, success=False
+                )
+        elif cmd == "logout":
+            user_management_cog = self.bot.get_cog("UserManagement")
+            if user_management_cog:
+                await user_management_cog.execute_logout(message, parts)
+            else:
+                await self.send_terminal_response(
+                    channel, command, 
+                    "logout: module not loaded\nTry restarting the bot", 
+                    user, success=False
+                )
+        
         else:
             await self.send_terminal_response(
                 channel, command, 
@@ -279,11 +321,14 @@ Type 'help' for available commands."""
             await self.send_terminal_response(channel, "clear", "Permission denied", user, success=False)
     
     async def cmd_help(self, channel, user):
-        output = """LINCORD Terminal v2.0 - Available Commands:
+        # Split help into multiple messages to avoid Discord's 2000 character limit
+        
+        # Part 1: Basic commands
+        output1 = """LINCORD Terminal v2.0 - Available Commands (1/3):
 
 FILESYSTEM:
   ls [dir]          - List directory contents
-  pwd               - Print working directory
+  pwd               - Print working directory  
   cd <dir>          - Change directory (simulated)
   cat <file>        - Display file contents
   tree              - Show directory tree
@@ -305,7 +350,13 @@ UTILITIES:
   clear             - Clear terminal
   history           - Command history
   alias             - Show aliases
-  man <cmd>         - Manual pages
+  man <cmd>         - Manual pages"""
+        
+        await self.send_terminal_response(channel, "help", output1, user)
+        await asyncio.sleep(0.5)
+        
+        # Part 2: Package manager and permissions
+        output2 = """LINCORD Terminal v2.0 - Available Commands (2/3):
 
 PACKAGE MANAGER:
   apt list          - List available packages
@@ -315,15 +366,43 @@ PACKAGE MANAGER:
   apt remove <pkg>  - Remove package
   apt upgrade       - Upgrade all packages
 
+PERMISSION SYSTEM:
+  groups role add <@role> <level>   - Add role with permission level (1-5)
+  groups role remove <@role>        - Remove role permissions
+  groups role list                  - List all role permissions
+  user add <@user>                  - Add user to system
+  user remove <@user>               - Remove user from system
+  user perms add <@user> <level>    - Set user permission level (1-5)
+  user perms remove <@user>         - Remove user permissions
+  user list                         - List all system users
+  user passwd [username]            - Set/change password
+  login <username>                  - Login to system
+  logout                            - Logout from system"""
+        
+        await self.send_terminal_response(channel, "help", output2, user)
+        await asyncio.sleep(0.5)
+        
+        # Part 3: Packages and levels
+        output3 = """LINCORD Terminal v2.0 - Available Commands (3/3):
+
 INSTALLED PACKAGES:
   modtools <cmd>    - Moderation tools (if installed)
   funcommands <cmd> - Fun commands (if installed)
 
+PERMISSION LEVELS:
+  1 - Supporter     - Basic access
+  2 - Moderator     - Moderate permissions
+  3 - Admin         - Advanced permissions
+  4 - Senior Admin  - High-level permissions
+  5 - Super Admin   - Full system access
+
 HELP:
   help              - Show this help
-  help <command>    - Get help for specific command"""
+  help <command>    - Get help for specific command
+
+Type any command to get started!"""
         
-        await self.send_terminal_response(channel, "help", output, user)
+        await self.send_terminal_response(channel, "help", output3, user)
     
     async def cmd_uname(self, channel, user, args):
         if args and args[0] == "-a":
