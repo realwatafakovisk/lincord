@@ -199,7 +199,7 @@ Fixes #(Issue-Nummer)
 2. **Testen Sie mit der neuesten Version** von LINCORD
 3. **Sammeln Sie relevante Informationen**:
    - Python-Version
-   - Discord.py-Version
+   - py-cord-Version
    - Fehlermeldungen/Logs
    - Schritte zur Reproduktion
 
@@ -327,3 +327,4 @@ Contributors werden anerkannt in:
 - **Hall of Fame** für Sicherheitsforscher
 
 Vielen Dank für Ihren Beitrag zu LINCORD! Ihre Bemühungen helfen dabei, dieses Projekt für alle besser zu machen.
+
